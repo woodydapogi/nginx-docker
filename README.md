@@ -1,4 +1,4 @@
-# nginx-docker
+# NGINX reverse proxy using docker
 1. Create a docker network
 docker create network --subnet=<network.address/cidr> <network_name>
 
