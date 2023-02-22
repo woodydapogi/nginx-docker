@@ -1,12 +1,13 @@
 FROM nginx:latest
 
-# Create directories for the configuration files.
+# Create sites-available and sites-enabled for configuration files default location.
 RUN mkdir /etc/nginx/sites-available/ \
     && mkdir /etc/nginx/sites-enabled/
 
-# Copy directory and content of site1 to default location.
+# Copy the global-master directory and contents.
 COPY ./html/global-master /usr/share/nginx/html/global-master
 
+# Copy the configuration file to the configuration file of the nginx container.
 COPY ./nginx-config_file.conf /etc/nginx/sites-available/global-master-config.conf
 
 # Copy nginx configuration file.
