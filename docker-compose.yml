@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  web:
+    image: nginx:latest
+    networks:
+      webnet:
+        ipv4_address: 192.168.2.10
+
+    volumes:
+      - ./html/global-master:/usr/share/nginx/html
+
+networks:
+  webnet:
+    external:
+      name: web-net  
